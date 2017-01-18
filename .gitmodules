@@ -1,0 +1,9 @@
+[submodule ".vim/gnome-terminal-colors-solarized"]
+    path = .vim/gnome-terminal-colors-solarized
+    url = https://github.com/Anthony25/gnome-terminal-colors-solarized
+    ignore = dirty
+
+[submodule ".vim/dircolors-solarized"]
+    path = .vim/dircolors-solarized
+    url = https://github.com/seebi/dircolors-solarized
+    ignore = dirty

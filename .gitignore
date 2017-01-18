@@ -1,0 +1,12 @@
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.sessions/
+sessions/
+.netrwhist
+*~
+bundle/*
+gnome-terminal-colors-solarized/
+dircolors-solarized/
+.backup/

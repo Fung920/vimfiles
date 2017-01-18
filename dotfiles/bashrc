@@ -1,0 +1,50 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+if type vimx >/dev/null 2>&1; then
+    alias vim='vimx'
+fi
+
+
+if [ `uname` == 'Linxu' ]; then
+    if [ "`id -u`" -eq 0 ]; then
+        export PS1="\e[0;37m[\e[0;31m\u\e[0;32m@\[\e[0;34m\]\h \e[0;34m\e[4;35m\w\e[0m\e[0;37m:(\$(ls | wc -l))]\n\e[0;31m# \[\e[0m\]"
+    else
+        export PS1="\e[0;37m[\e[0;31m\u\e[0;32m@\[\e[0;34m\]\h:\e[4;35m\w\e[0m\e[0;37m:(\$(ls | wc -l))]\n$ \[\e[0m\]"
+    fi
+else
+    export PS1="\e[0;37m[\e[0;31m\u\e[0;32m@\[\e[0;34m\]\h:\e[4;35m\w\e[0m\e[0;37m]\n$ \[\e[0m\]"
+fi
+
+export TERM=xterm-256color
+
+# for dircolors
+if [ -f ~/.dir_colors/dircolors ]; then
+    eval `dircolors ~/.dir_colors/dircolors`
+elif [ -f ~/.dircolors ]; then
+    eval `dircolors ~/.dircolors`
+fi
+# fi
+
+# setting alias for colorized
+alias tree='tree -C'
+alias l.='ls -d .* --color'
+alias ll='ls -l --color'
+alias ls='ls --color'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+#For tmux
+if type tmux >/dev/null 2>&1; then
+    export LD_LIBRARY_PATH=/usr/local/lib
+    alias tmux='tmux -2'
+fi
+
+
+set -o vi
+
