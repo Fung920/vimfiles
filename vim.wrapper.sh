@@ -166,7 +166,8 @@ EOF
     fi
 
     if [ $(uname) != 'Linux' ]; then
-        cp -r $gitdir ~/vimfiles
+        mkdir -p ~/vimfiles
+        cp -r $gitdir/* ~/vimfiles
         if [ -f ~/.dircolors ]; then
             mv ~/.dircolors ~/.dircolors_$(timeStamp).bak
         fi
