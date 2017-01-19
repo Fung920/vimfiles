@@ -62,6 +62,9 @@ rcstatus(){
 # for gnome-terminal solarized color/dircolors setting
 colorized(){
     if [ $platform == 'Linux' ]; then
+cat >>~/.wgetrc<<EOF
+check_certificate=off
+EOF
         echo -e '+++Setting up the gnome-terminal:\n
         +++git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git $gitdir/gnome-terminal-colors-solarized\n'
         git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git $gitdir/gnome-terminal-colors-solarized

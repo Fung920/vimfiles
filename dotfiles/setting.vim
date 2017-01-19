@@ -38,7 +38,11 @@ set showtabline=2
 " }}}
 
 " ====[ automatically reloading of vimrc file ]===={{{
-autocmd! bufwritepost .vimrc source %
+augroup vimrc
+    autocmd! BufWritePost $HOME/.vim/dotfiles/*.vim source $MYVIMRC
+    autocmd! BufWritePost $MYVIMRC source $MYVIMRC
+    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so %MYGVIMRC | endif
+augroup END
 " }}}
 
 " ====[ do not show the hightlight search result when re-open the file " ]===={{{
