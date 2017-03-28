@@ -1,8 +1,9 @@
-Description
-================================
+#Description
+
 My cross platform vim setting, for RHEL, Ubuntu and Windows with msysgit installed.
-Usage
-================================
+
+#Usage
+
 ##Auto config(Recommended on Linux)
 ```bash
 /bin/bash <(curl https://raw.githubusercontent.com/Fung920/vimfiles/master/vim.wrapper.sh)
