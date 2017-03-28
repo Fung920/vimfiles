@@ -133,6 +133,7 @@ cat >>~/.bashrc<<EOF
 
 # from vim setting
 . $gitdir/dotfiles/bashrc
+alias view='vi -R'
 # end of vim setting
 
 EOF
