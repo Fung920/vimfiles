@@ -1,15 +1,15 @@
-#Description
+# Description
 
 My cross platform vim setting, for RHEL, Ubuntu and Windows with msysgit installed.
 
-#Usage
+# Usage
 
-##Auto config(Recommended on Linux)
+## Auto config(Recommended on Linux)
 ```bash
 /bin/bash <(curl https://raw.githubusercontent.com/Fung920/vimfiles/master/vim.wrapper.sh)
 ```
-##Manually config(Recommended on Windows)
-###Linux
+## Manually config(Recommended on Windows)
+### Linux
 ```bash
 cd $HOME/.vim
 git clone https://github.com/Fung920/vimfiles ~/.vim
@@ -34,7 +34,7 @@ eval `dircolors ~/.dir_colors/dircolors`
 rm -rf $HOME/.vim/gnome-terminal-colors-solarized
 ```
 
-###Windows(with msysgit installed)
+### Windows(with msysgit installed)
 ```bash
 # In the git bash
 git clone https://github.com/Fung920/vimfiles $HOME/vimfiles && cd $HOME/vimfiles
@@ -56,11 +56,12 @@ cat >>~/.bashrc<<EOF
 EOF
 ```
 
-gitignore collection
-================================
+# gitignore collection
+
 [A collection of gitignore templates](https://github.com/github/gitignore)
-TMUX and screen cheat-sheet
-================================
+
+# TMUX and screen cheat-sheet
+
 Ctrl in tmux and screen will show as ^ here. My tmux prefix is ^a.
 
 | Action                                                        | Tmux               | Screen                |
