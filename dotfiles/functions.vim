@@ -3,6 +3,7 @@
 
 " ====[ relative number line toggle ]===={{{
 set rnu
+set nu
 function! NumberToggle()
     if(&relativenumber == 1)
         set invnu nornu
