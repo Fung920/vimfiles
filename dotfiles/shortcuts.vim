@@ -101,6 +101,8 @@ func! RunScript()
         exec "!bash %"
     elseif &filetype == 'perl'
         exec "!perl %"
+    endif
+endfunc
 " }}}
 
 " ====[ delete the ^M from windows(Not work on UNIX) ]===={{{
