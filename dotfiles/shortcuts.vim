@@ -90,8 +90,17 @@ nnoremap ` @q
 vnoremap ` :normal @q<CR>
 " }}}
 
-" ====[ press F5 to run python script ]===={{{
-map <f5> :w<cr>:!python %<cr>
+" ====[ press F5 to run python/shell/perl script ]===={{{
+" map <f5> :w<cr>:!python %<cr>
+map <f5> :call RunScript()<cr>
+func! RunScript()
+    exec "w"
+    if &filetype == 'python'
+        exec "!python %"
+    elseif &filetype == 'sh'
+        exec "!bash %"
+    elseif &filetype == 'perl'
+        exec "!perl %"
 " }}}
 
 " ====[ delete the ^M from windows(Not work on UNIX) ]===={{{
