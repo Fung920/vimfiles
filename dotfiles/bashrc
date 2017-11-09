@@ -48,3 +48,14 @@ fi
 
 set -o vi
 
+# for python virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/workspace
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+source /usr/local/bin/virtualenvwrapper.sh
+
+# for Youdao CMD dict
+alias wd=/worktmp/software/wd.py
+
+# 艾宾浩斯记忆曲线
+alias ebbinghaus=/worktmp/software/Ebbinghaus.py

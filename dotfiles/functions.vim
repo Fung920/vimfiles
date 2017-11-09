@@ -96,7 +96,7 @@ map <leader>m :call MakeSession()<CR>
 " }}}
 
 " ====[ Insert file header in shell script and python ] ===={{{
-autocmd BufNewFile *.sh,*.py,*.ksh exec ":call SetTitle()"
+autocmd BufNewFile *.pl,*.sh,*.py,*.ksh exec ":call SetTitle()"
 func! SetTitle()
     if &filetype == 'sh'
         call setline(1, "\#!/usr/bin/env bash")
@@ -121,6 +121,18 @@ func! SetTitle()
         call append(line(".")+6, "\#                ")
         call append(line(".")+7, "\#########################################################################")
         call append(line(".")+8, "")
+    endif
+    if &filetype == 'perl'
+        call setline(1, "\#!/usr/bin/env perl")
+        call append(line("."), "\"\"\"")
+        call append(line(".")+1, "\# Author:        Fung Kong")
+        call append(line(".")+2, "\# Email:         kyun.kong@gmail.com")
+        call append(line(".")+3, "\# Created Time:  ".strftime('%Y-%m-%d %T', localtime()))
+        call append(line(".")+4, "\# File Name:     ".expand("%"))
+        call append(line(".")+5, "\# Description:   ")
+        call append(line(".")+6, "\# ")
+        call append(line(".")+7, "\"\"\"")
+        call append(line(".")+8,"")
     endif
     if &filetype == 'python'
         call setline(1, "\#!/usr/bin/env python")
