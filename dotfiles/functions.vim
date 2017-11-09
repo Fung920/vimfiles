@@ -129,7 +129,7 @@ func! SetTitle()
         call append(line(".")+2, "\# Created Time:  ".strftime('%Y-%m-%d %T', localtime()))
         call append(line(".")+3, "\# File Name:     ".expand("%"))
         call append(line(".")+4, "\# Description:   ")
-        call append(line(".")+5, "\# ")
+        call append(line(".")+5, "use utf8;")
         call append(line(".")+6,"")
     endif
     if &filetype == 'python'
