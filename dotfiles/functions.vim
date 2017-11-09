@@ -124,15 +124,13 @@ func! SetTitle()
     endif
     if &filetype == 'perl'
         call setline(1, "\#!/usr/bin/env perl")
-        call append(line("."), "\"\"\"")
-        call append(line(".")+1, "\# Author:        Fung Kong")
-        call append(line(".")+2, "\# Email:         kyun.kong@gmail.com")
-        call append(line(".")+3, "\# Created Time:  ".strftime('%Y-%m-%d %T', localtime()))
-        call append(line(".")+4, "\# File Name:     ".expand("%"))
-        call append(line(".")+5, "\# Description:   ")
-        call append(line(".")+6, "\# ")
-        call append(line(".")+7, "\"\"\"")
-        call append(line(".")+8,"")
+        call append(line("."), "\# Author:        Fung Kong")
+        call append(line(".")+1, "\# Email:         kyun.kong@gmail.com")
+        call append(line(".")+2, "\# Created Time:  ".strftime('%Y-%m-%d %T', localtime()))
+        call append(line(".")+3, "\# File Name:     ".expand("%"))
+        call append(line(".")+4, "\# Description:   ")
+        call append(line(".")+5, "\# ")
+        call append(line(".")+6,"")
     endif
     if &filetype == 'python'
         call setline(1, "\#!/usr/bin/env python")
