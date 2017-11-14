@@ -131,7 +131,7 @@ func! SetTitle()
         call append(line(".")+4, "\# Description:   ")
         call append(line(".")+5, "use utf8;")
         call append(line(".")+6, "use warnings;")
-        call append(line(".")+7, "use restrict;")
+        call append(line(".")+7, "use strict;")
         call append(line(".")+8,"")
     endif
     if &filetype == 'python'
