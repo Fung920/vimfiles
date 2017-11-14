@@ -18,14 +18,28 @@ dotfiledir=$gitdir/dotfiles
 vimversion=$(vim --version | head -1 | cut -d ' ' -f 5)
 
 # define the usage hint
+# usage(){
+    # echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    # echo -e "+++Synchronize the vim configuration file with the github+++++++++++"
+    # echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    # echo -e "\n\toption 'Install' for newly installation;\n
+    # \toption 'Pull' for pulling the github to the local repo;\n
+    # \toption 'Push' for pushing the local repo to the github\n"
+    # echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+# }
+
 usage(){
-    echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    echo -e "+++Synchronize the vim configuration file with the github+++++++++++"
-    echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    echo -e "\n\toption 'Install' for newly installation;\n
-    \toption 'Pull' for pulling the github to the local repo;\n
-    \toption 'Push' for pushing the local repo to the github\n"
-    echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    echo "========================================================================="
+    echo -e "+\tSynchronize the vim configuration file with the github\t\t+"
+    echo "========================================================================="
+    echo -e "+\t\t\t\t\t\t\t\t\t+"
+    echo -e "+\toption 'Install' for newly installation;\t\t\t+"
+    # echo -e "+\t\t\t\t\t\t\t\t\t+"
+    echo -e "+\toption 'Pull' for pulling the github to the local repo;\t\t+"
+    # echo -e "+\t\t\t\t\t\t\t\t\t+"
+    echo -e "+\toption 'Push' for pushing the local repo to the github\t\t+"
+    echo -e "+\t\t\t\t\t\t\t\t\t+"
+    echo "========================================================================="
 }
 
 # check the local git repository exists
@@ -242,7 +256,7 @@ PUSH(){
 clear
 
 #Display the menu title header
-echo -e "\n\t\tVIM configuration toolkit\n"
+echo -e "\n\t\t\tVIM configuration toolkit\n"
 usage
 
 # Defile the menu prompt
