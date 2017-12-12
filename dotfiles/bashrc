@@ -55,10 +55,10 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
 source /usr/bin/virtualenvwrapper.sh
 
 # for Youdao CMD dict
-alias wd=/worktmp/software/wd.py
+alias wd=/worktmp/Archive/software/wd.py
 
 # 艾宾浩斯记忆曲线
-alias ebbinghaus=/worktmp/software/Ebbinghaus.py
+alias ebbinghaus=/worktmp/Archive/software/Ebbinghaus.py
 
 # from vim setting
 alias view='vi -R'
