@@ -10,15 +10,18 @@ if type vimx >/dev/null 2>&1; then
 fi
 
 
-if [ `uname` == 'Linxu' ]; then
-    if [ "`id -u`" -eq 0 ]; then
-        export PS1="\e[0;37m[\e[0;31m\u\e[0;32m@\[\e[0;34m\]\h \e[0;34m\e[4;35m\w\e[0m\e[0;37m:(\$(ls | wc -l))]\n\e[0;31m# \[\e[0m\]"
-    else
-        export PS1="\e[0;37m[\e[0;31m\u\e[0;32m@\[\e[0;34m\]\h:\e[4;35m\w\e[0m\e[0;37m:(\$(ls | wc -l))]\n$ \[\e[0m\]"
-    fi
-else
-    export PS1="\e[0;37m[\e[0;31m\u\e[0;32m@\[\e[0;34m\]\h:\e[4;35m\w\e[0m\e[0;37m]\n$ \[\e[0m\]"
-fi
+# if [ `uname` == 'Linxu' ]; then
+    # if [ "`id -u`" -eq 0 ]; then
+        # export PS1="\e[0;37m[\e[0;31m\u\e[0;32m@\[\e[0;34m\]\h \e[0;34m\e[4;35m\w\e[0m\e[0;37m:(\$(ls | wc -l))]\n\e[0;31m# \[\e[0m\]"
+    # else
+        # export PS1="\e[0;37m[\e[0;31m\u\e[0;32m@\[\e[0;34m\]\h:\e[4;35m\w\e[0m\e[0;37m:(\$(ls | wc -l))]\n$ \[\e[0m\]"
+    # fi
+# else
+    # export PS1="\e[0;37m[\e[0;31m\u\e[0;32m@\[\e[0;34m\]\h:\e[4;35m\w\e[0m\e[0;37m]\n$ \[\e[0m\]"
+# fi
+
+# \h:\W \u\$
+export PS1="\e[0;37m[\e[0;31m\u\e[0;32m@\[\e[0;34m\]\h:\e[4;35m\w\e[0m\e[0;37m]\n$ \[\e[0m\]"
 
 export TERM=xterm-256color
 
@@ -32,35 +35,50 @@ fi
 
 # setting alias for colorized
 alias tree='tree -C'
-alias l.='ls -d .* --color'
-alias ll='ls -l --color'
-alias ls='ls --color'
+if [ `uname` == 'Darwin' ]; then
+    alias l.='ls -dG .*'
+    alias ll='ls -lG'
+    alias ls='ls -G'
+else
+    alias l.='ls -d .* --color'
+    alias ll='ls -l --color'
+    alias ls='ls --color'
+fi
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 #For tmux
-if type tmux >/dev/null 2>&1; then
-    export LD_LIBRARY_PATH=/usr/local/lib
-    alias tmux='tmux -2'
-fi
+# if type tmux >/dev/null 2>&1; then
+    # export LD_LIBRARY_PATH=/usr/local/lib
+    # alias tmux='tmux -2'
+# fi
 
 
 set -o vi
 
 # for python virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/workspace
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
-source /usr/bin/virtualenvwrapper.sh
+## enable below lines if python virtual env is enable
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/workspace
+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+# source /usr/bin/virtualenvwrapper.sh
 
 # for Youdao CMD dict
-alias wd=/worktmp/Archive/software/wd.py
+# alias wd=/worktmp/Archive/software/wd.py
+alias wd=/worktmp/T450/worktmp/Archive/software/wd.py
 
 # 艾宾浩斯记忆曲线
-alias ebbinghaus=/worktmp/Archive/software/Ebbinghaus.py
+# alias ebbinghaus=/worktmp/Archive/software/Ebbinghaus.py
+alias ebbinghaus=/worktmp/T450/worktmp/Archive/software/Ebbinghaus.py
 
 # from vim setting
 alias view='vi -R'
 # end of vim setting
 
+
+# for converting docs to pdf
+alias doc2pdf='/worktmp/automation/docs2pdf.sh'
+
+# for convert Windows EOL to Linux/Unix format
+alias dos2unixa='/worktmp/T450/worktmp/Archive/software/format.ksh'

@@ -96,7 +96,7 @@ map <leader>m :call MakeSession()<CR>
 " }}}
 
 " ====[ Insert file header in shell script and python ] ===={{{
-autocmd BufNewFile *.pl,*.sh,*.py,*.ksh exec ":call SetTitle()"
+autocmd BufNewFile *.pl,*.sh,*.py,*.ksh,*.sql exec ":call SetTitle()"
 func! SetTitle()
     if &filetype == 'sh'
         call setline(1, "\#!/usr/bin/env bash")
@@ -146,6 +146,18 @@ func! SetTitle()
         call append(line(".")+7, "\# ")
         call append(line(".")+8, "\"\"\"")
         call append(line(".")+9,"")
+    endif
+    if &filetype == 'sql'
+        call setline(1, "-- -------------------------------------------------------")
+        call append(line("."), "-- File Name     : ".expand("%"))
+        call append(line(".")+1, "-- Author        : Fung Kong")
+        call append(line(".")+2, "-- Created Time  : ".strftime('%Y-%m-%d %T', localtime()))
+        call append(line(".")+3, "-- Call Syntax   : @".expand("%"))
+        call append(line(".")+4, "-- Description   : ")
+        call append(line(".")+5, "-- Last Modified : ")
+        call append(line(".")+6, "-- Version       : ")
+        call append(line(".")+7, "-- -------------------------------------------------------")
+        call append(line(".")+8,"")
     endif
     " Replace by emmet-vim: insert mode, type "html:5" and type <c-y>, there's
     " a comma here

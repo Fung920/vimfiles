@@ -109,3 +109,6 @@ endfunc
 nnoremap mm :%s/\r//g<cr>
 " }}}
 
+" ====[Mapping quarto block]===={{{
+nnoremap mm :%s/\r//g<cr>
+" }}}
