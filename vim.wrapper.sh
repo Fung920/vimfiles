@@ -75,7 +75,7 @@ rcstatus(){
 
 # for gnome-terminal solarized color/dircolors setting
 colorized(){
-    if [ $platform == 'Linux' ]; then
+    if [ $platform == 'Linux' ] || [$platform == 'Darwin' ]; then
 cat >>~/.wgetrc<<EOF
 check_certificate=off
 EOF
@@ -139,7 +139,8 @@ INSTALL(){
     fi
     ln -s $dotfiledir/inputrc ~/.inputrc
     ln -s $dotfiledir/screenrc ~/.screenrc
-    if [ $platform != 'Linux' ]; then
+    if [ $platform != 'Linux' ] && [ $platform != 'Darwin' ]; then
+        #for windows only
         ln -s $dotfiledir/minttyrc ~/.minttyrc
     fi
     echo -e '\n+++Adding source file to bashrc\n'
@@ -183,7 +184,8 @@ EOF
         echo -e "+++Too many error input attempt, terminating the script,please resolve the conflicts manual and run the script again...\n"
     fi
 
-    if [ $(uname) != 'Linux' ]; then
+    if [ $(uname) != 'Linux' ] && [ $platform != 'Darwin' ]; then
+        #for windows only
         mkdir -p ~/vimfiles
         cp -r $gitdir/* ~/vimfiles
         if [ -f ~/.dircolors ]; then
