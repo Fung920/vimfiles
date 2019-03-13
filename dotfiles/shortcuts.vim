@@ -41,6 +41,7 @@ vnoremap <leader>s :sort<CR>
 " ====[ mapping key for switch tab window ]===={{{
 nnoremap <leader>bn :bnext!<CR>
 nnoremap <leader>bp :bpre!<CR>
+nnoremap <leader>bq :bd!<CR>
 " }}}
 
 " ===[ mapping force logout ]===={{{
